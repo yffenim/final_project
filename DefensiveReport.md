@@ -8,23 +8,38 @@
 - Suggestions for Going Further
 
 ### Network Topology
-_TODO: Fill out the information below._
 
+```
 The following machines were identified on the network:
-- Name of VM 1
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Name of VM 2
-  - **Operating System**:
-  - **Purpose**:
-  - **IP Address**:
-- Etc.
+Name: ML-RefVm-684427
+Operating System: Windows 10
+Purpose: Hyper-V host
+IP Address: 192.168.1.1
+Name: ELK
+Operating System: Ubuntu 18.04.4
+Purpose: ELK server
+IP Address: 192.168.1.100
+Name server1
+Operating System: Ubuntu 18.04.1
+Purpose: Apache httpd 2.4.29
+IP Address: 192.168.1.105
+Name: target1
+Operating System: Debian 8
+Purpose: Apache httpd 2.4.10, Samba smbd server
+IP Address: 192.168.1.110
+Name: target2
+Operating System: Debian 8
+Purpose: Apache httpd 2.4.10, Samba smbd server
+IP Address: 192.168.1.115
+Name Kali
+Operating System: Kali 5.4.0
+Purpose: Attacker machine
+IP Address: 192.168.1.90 (edited) 
+```
 
 ### Description of Targets
-_TODO: Answer the questions below._
 
-The target of this attack was: `Target 1` (TODO: IP Address).
+The target of this attack was: `Target 1`
 
 Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are possible ports of entry for attackers. As such, the following alerts have been implemented:
 

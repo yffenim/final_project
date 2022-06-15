@@ -55,13 +55,13 @@ The Red Team was able to penetrate `Target 1` and retrieve the following confide
 
 - Searching for `flag2` in the `/var/www` directory and finding it easily:
 
-![06_flag2]()
+![06_flag2](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/06_flag2.png)
 
 ### EXPLOIT: 
 
 - Finding the `MySQL` database credentials by printing the contents of `/var/www/html/wordpress/wp-config.php`. We can see that the username is `root` and the password is `R@v3nSecurity`:
 
-![07_db1]()
+![07_db1](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/07_db1.png)
 
 - Using the credentials to login to MySQL with `mysql -u root -p` and searching for the user password hashes with the following sequence of commands:
 
@@ -77,18 +77,18 @@ View all users table objects: `select * from wp_users`
 
 - Finding `flag3` and `flag4` by exploring the rest of the database tables. We run `select * from wp_posts` to find:
 
-![09_flag3]()
+![09_flag3](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/09_flag3.png)
 
-![10_flag4]()
+![10_flag4](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/10_flag4.png)
 
 ### EXPLOIT: 
 
 - Using `john` to crack the password hashes for Steve's credentials: `john -wordlist:/usr/share/wordlists/rockyou.txt hash.txt` to find his password: pink84
 
-![11_john]()
+![11_john](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/11_john.png)
 
 - Now we can `SSH` into Steven's account with: `ssh steven@192.168.1.110` and escalate privileges for root access:
 
+![12_root](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/12_root.png)
 
-![12_root]()
-![13_root]()
+![13_root](https://raw.githubusercontent.com/yffenim/final_project/main/OffensiveReportImages/13_root.png)
