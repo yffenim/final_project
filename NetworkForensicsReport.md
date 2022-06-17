@@ -46,17 +46,64 @@ Filter used: `ip.addr == 10.6.12.0/24 && http.request.method == GET`
 
 This is a Trojan malware, often used for the staging aspect of the Cyberkill chain during an attack.
 
-
 ---
 
 ## Vulnerable Windows Machine
 
 1. Find the following information about the infected Windows machine:
-    - Host name
-    - IP address
-    - MAC address
+
+HOST NAME: `ROTTERDAM-PC`
+IP ADDRESS: `172.16.4.205`
+MAC ADDRESS: `00:59:07:b0:63:a4`
+Filter used: `ip.addr == 172.16.4.0/24`
+
+Finding the Domain name by filtering by network: 
+
+![01_DomainName]()
     
 2. What is the username of the Windows user whose computer is infected?
+
+Checking for clues on security vulnerabilities automated detected by Wireshark:
+
+![02_WhyHTTP]()
+
+Filtering for `HTTP` `POST` traffic with: `ip.addr == 172.16.4.0/24 && http.request.method == POST`
+
+![03_HTTP_Post_By_Filter]()
+
+This shows that the IP address `172.16.4.205` has made repeated `POST` requests to a suspicious URL ending with `/fakeurl.htm`
+
+Searching the internet confirms that this is likely malware  https://www.malware-traffic-analysis.net/2018/07/05/index.html
+
+In order to find the username connected to this ip, we add `CNameString` as a column or as a filter. Here shown added as a column for efficient visualization:
+
+![04_CName]()
+
 3. What are the IP addresses used in the actual infection traffic?
+
+To find this, click on the Statistics Tab > Select Conversation > Select IPv4 > Sort Packets based on high to low:
+
+The infected IP address can be seen predominantly connecting to `185.243.115.84`. Also of interest is: `166.62.111.64`
+
+![05_InfectedTraffic]()
+
+![06_InfectedTraffic]()
+
+Following-up on the the network traffic between the infected machine and `185.243.115.84` by right clicking on the conversation we're interested in > Apply as Filter > Selected > A <-> B or by using the filter: `ip.addr == 172.16.4.205 && ip.addr == 166.62.111.64`
+
+![07_InfectedTrafficConversation]()
+
 4. As a bonus, retrieve the desktop background of the Windows host.
+
+We can see that there's a suspicious POST request with `empty.gif` filenamme. We can export Wireshark `HTTP` objects by clicking File > Export Objects > HTTP and then saving the object with the `.gif` extension. 
+
+We choose which object to export based on largest size as the smaller ones did not work and we assumed the largest ones contained the full file data. 
+
+![08_FindDesktopImage]()
+
+We determined that the image object is common seagull:
+
+![09_DesktopImage]()
+
+![10_Seagull]()
 
