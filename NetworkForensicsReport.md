@@ -19,29 +19,28 @@ You must inspect your traffic capture to answer the following questions:
 Domain Name: `Frank-n-Ted-DC. frank-n-ted.com`
 Filter used: `ip.addr == 10.6.12.0/24`
 
-![01_findDomainName]()
+![01_findDomainName](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/01_findDomainName.png)
 
 2. What is the IP address of the Domain Controller (DC) of the AD network?
 
 IP Address: `10.6.12.12` for `Frank-n-Ted-DC. frank-n-ted.com`
 Filter used: `ip.addr == 10.6.12.0/24`
 
-![02_findDC_IPaddress]()
+![02_findDC_IPaddress](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/02_findDC_IPaddress.png)
 
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
 
 Malware file name: `june11.dll`
 Filter used: `ip.addr == 10.6.12.0/24 && http.request.method == GET`
 
-![03_findDLL]()
-![04_findDLL1]()
+![04_findDLL1](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/04_findDLL1.png)
 ![05_exportDLL]()
 
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
 
-![06_VT1]()
-![07_VT2]()
-![08_VT3]()
+![06_VT1](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/05_exportDLL.png)
+![07_VT2](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/06_VT1.png)
+![08_VT3](https://github.com/yffenim/final_project/blob/main/NetworkForensicsImages/08_VT3.png)
 
 5. What kind of malware is this classified as?
 
