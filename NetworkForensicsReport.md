@@ -63,7 +63,7 @@ Finding the Domain name by filtering by network:
     
 ### 2. What is the username of the Windows user whose computer is infected?
 
-Checking for clues on security vulnerabilities automated detected by Wireshark:
+Checking for clues on security vulnerabilities automated detected by Wireshark so we can narrow down our search:
 
 ![02_WhyHTTP](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/02_WhyHTTP.png)
 
@@ -78,6 +78,8 @@ Searching the internet confirms that this is likely malware  https://www.malware
 In order to find the username connected to this ip, we add `CNameString` as a column or as a filter. Here shown added as a column for efficient visualization:
 
 ![04_CName](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/04_CName.png)
+
+**The name in question is: matthijs.devries**
 
 ### 3. What are the IP addresses used in the actual infection traffic?
 
