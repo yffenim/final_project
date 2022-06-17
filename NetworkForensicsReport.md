@@ -95,6 +95,10 @@ Following-up on the the network traffic between the infected machine and `185.24
 
 ![07_InfectedTrafficConversation](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/07_InfectedTrafficConversation.png)
 
+We can check the destination of these suspect `POST` requests (`http://green.mattingsolutions.co/`) with VirusTotal, we can see that it is flagged as malware:
+
+![11_VTforPT2]()
+
 ### 4. As a bonus, retrieve the desktop background of the Windows host.
 
 We can see that there's a suspicious POST request with `empty.gif` filenamme. We can export Wireshark `HTTP` objects by clicking File > Export Objects > HTTP and then saving the object with the `.gif` extension. 
