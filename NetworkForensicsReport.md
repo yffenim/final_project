@@ -1,16 +1,52 @@
 # Network Forensic Analysis Report
 
-_TODO_ Complete this report as you complete the Network Activity on Day 3 of class.
 
 ## Time Thieves 
 You must inspect your traffic capture to answer the following questions:
 
+## Wireshark Filters Used:
+
+`ip.addr == 10.6.12.0/24`
+
+`ip.addr == 10.6.12.0/24 && http.request.method == GET`
+
+`ip.src == 10.6.12.203`
+
+## Questions 
+
 1. What is the domain name of the users' custom site?
+
+Domain Name: `Frank-n-Ted-DC. frank-n-ted.com`
+Filter used: `ip.addr == 10.6.12.0/24`
+
+![01_findDomainName]()
+
 2. What is the IP address of the Domain Controller (DC) of the AD network?
+
+IP Address: `10.6.12.12` for `Frank-n-Ted-DC. frank-n-ted.com`
+Filter used: `ip.addr == 10.6.12.0/24`
+
+![02_findDC_IPaddress]()
+
 3. What is the name of the malware downloaded to the 10.6.12.203 machine?
-   - Once you have found the file, export it to your Kali machine's desktop.
+
+Malware file name: `june11.dll`
+Filter used: `ip.addr == 10.6.12.0/24 && http.request.method == GET`
+
+![03_findDLL]()
+![04_findDLL1]()
+![05_exportDLL]()
+
 4. Upload the file to [VirusTotal.com](https://www.virustotal.com/gui/). 
+
+![06_VT1]()
+![07_VT2]()
+![08_VT3]()
+
 5. What kind of malware is this classified as?
+
+This is a Trojan malware, often used for the staging aspect of the Cyberkill chain during an attack.
+
 
 ---
 

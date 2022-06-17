@@ -48,7 +48,6 @@ Target 1 is an Apache web server and has SSH enabled, so ports 80 and 22 are pos
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
 #### Name of Alert 1
-_TODO: Replace `Alert 1` with the name of the alert._
 
 Alert 1 is implemented as follows:
   - **Metric**: TODO
