@@ -97,7 +97,7 @@ Following-up on the the network traffic between the infected machine and `185.24
 
 We can check the destination of these suspect `POST` requests (`http://green.mattingsolutions.co/`) with VirusTotal, we can see that it is flagged as malware:
 
-![11_VTforPT2]()
+![11_VTforPT2](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkForensicsImages/11_VTforPT2.png)
 
 ### 4. As a bonus, retrieve the desktop background of the Windows host.
 
