@@ -7,6 +7,11 @@
 - Patterns of Traffic & Behavior
 - Suggestions for Going Further
 
+### Network Topology Diagram by Helder Luis 
+
+![diagram](https://raw.githubusercontent.com/yffenim/final_project/main/NetworkTopology.png)
+
+
 ### Network Topology
 
 ```
