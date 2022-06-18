@@ -50,6 +50,8 @@ Target 1 is an Apache web server at IP address `192.168.1.110` running Wordpress
 
 ### Monitoring the Targets
 
+_Note: Our alerts did not trigger despite rerunning the assignment twice and adjusting threshold so I have not included screencaps._
+
 Traffic to these services should be carefully monitored. To this end, we have implemented the alerts below:
 
 ### ALERT 1: Excessive HTTP Errors
@@ -63,7 +65,6 @@ Traffic to these services should be carefully monitored. To this end, we have im
 **Vulnerability Mitigated:** Website/server is being queried repeatedly, possible brute force or DDOS attack is happening
 **Reliability:** If there is a sudden surge of errors detected, we can reliably consider this an IOA (indicator of attack).
 
-![excess]()
 
 ### ALERT 2: HTTP Request Size Monitor
 
@@ -76,7 +77,6 @@ Traffic to these services should be carefully monitored. To this end, we have im
 **Vulnerability Mitigated:** Website scan, vulnerability enumeration, data exfiltration, server data access
 **Reliability:** If there is suspiciously High data transfer to one external IP address, we can reliably suggest that this is an IOA of malicious activity
 
-![size]()
 
 ### ALERT 3: CPU Usage Monitor
 
